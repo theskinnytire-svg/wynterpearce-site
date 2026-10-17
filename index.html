@@ -40,6 +40,7 @@
       <a href="#reel">Reel</a>
       <a href="#headshots">Headshots</a>
       <a href="#performances">Performances</a>
+      <a href="#commercials">Commercials</a>
       <a href="#resume">Résumé</a>
       <a href="#skills">Skills</a>
       <a href="#about">About</a>
@@ -65,6 +66,7 @@
         <img class="hero__logo" src="assets/img/logo-transparent.png" alt="Wynter Pearce" width="900" height="381">
         <p class="hero__line">Official acting portfolio.</p>
         <p class="lede">Performances, footage and professional enquiries, presented for casting directors, agents and managers.</p>
+
         <div class="hero__actions">
           <a class="btn btn--primary" href="#performances">Watch the performance reel</a>
           <a class="btn btn--ghost" href="#resume">View résumé</a>
@@ -83,6 +85,31 @@
         <p class="frame__caption">Performance reel <span class="dot">·</span> 1:30 <span class="dot">·</span> Acting, singing and ensemble work</p>
       </div>
 
+    </div>
+
+    <div class="wrap hero__facts reveal">
+      <div class="facts" role="list" aria-label="Wynter Pearce at a glance">
+        <div class="fact" role="listitem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 20h16M5.5 20v-5.5h13V20M8 14.5v-3M12 14.5v-3M16 14.5v-3"/><path d="M12 8.6c.85-.6.85-1.6 0-2.2-.85.6-.85 1.6 0 2.2z"/></svg>
+          <span class="fact__v">9</span><span class="fact__k">Age</span>
+        </div>
+        <div class="fact" role="listitem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="3.3"/><path d="M5.4 20c0-3.7 2.9-6.3 6.6-6.3s6.6 2.6 6.6 6.3"/></svg>
+          <span class="fact__v">Female</span><span class="fact__k">Gender</span>
+        </div>
+        <div class="fact" role="listitem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M12 21s6.4-6.2 6.4-11A6.4 6.4 0 1 0 5.6 10c0 4.8 6.4 11 6.4 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+          <span class="fact__v">Bass Lake, CA</span><span class="fact__k">Based in</span>
+        </div>
+        <div class="fact" role="listitem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.4"/><path d="M12 7.4V12l3.1 2"/></svg>
+          <span class="fact__v">7 years</span><span class="fact__k">Experience</span>
+        </div>
+        <div class="fact" role="listitem">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8l1.85 6.05L19.9 10.7l-5.05 1.85L12 20.6l-1.85-6.05L5.1 12.55l5.05-1.85z"/></svg>
+          <span class="fact__v">Acting &amp; Dancing</span><span class="fact__k">Strength</span>
+        </div>
+      </div>
     </div>
     <a class="scrollcue" href="#headshots" aria-label="Continue to headshots"><span></span></a>
   </section>
@@ -184,11 +211,56 @@
     </div>
   </section>
 
-  <!-- ============ RESUME ============ -->
-  <section class="band" id="resume">
+  <!-- ============ COMMERCIALS ============ -->
+  <section class="band" id="commercials">
     <div class="wrap">
       <header class="shead reveal">
-        <p class="eyebrow">03 <span class="dot">·</span> Résumé</p>
+        <p class="eyebrow">03 <span class="dot">·</span> Commercial preview</p>
+        <h2 class="display">Commercial reads</h2>
+        <p class="lede">Self-taped commercial auditions — a product read, an unboxing-style demonstration and a closing to camera.</p>
+      </header>
+
+      <div class="comms reveal">
+        <figure class="comm">
+          <div class="frame frame--tight">
+            <video class="frame__video" controls playsinline preload="none"
+                   poster="assets/img/poster-youngwild.jpg"
+                   aria-label="Mock commercial read: play dough kit">
+              <source src="assets/video/commercial-youngwild.mp4" type="video/mp4">
+            </video>
+          </div>
+          <figcaption>
+            <span class="tag tag--comm">Mock commercial</span>
+            <h3>Play dough kit</h3>
+            <p>Product demonstration read, opening with the kit and closing to camera. 0:39</p>
+          </figcaption>
+        </figure>
+
+        <figure class="comm">
+          <div class="frame frame--tight">
+            <video class="frame__video" controls playsinline preload="none"
+                   poster="assets/img/poster-aurora.jpg"
+                   aria-label="Mock commercial read: plush toy">
+              <source src="assets/video/commercial-aurora.mp4" type="video/mp4">
+            </video>
+          </div>
+          <figcaption>
+            <span class="tag tag--comm">Mock commercial</span>
+            <h3>Plush toy</h3>
+            <p>Warm single-take read, handling the product and closing on the brand. 0:27</p>
+          </figcaption>
+        </figure>
+      </div>
+
+      <p class="note">These are practice self-tapes made for audition purposes rather than commissioned campaigns. Product names appear because they were the subject of the exercise.</p>
+    </div>
+  </section>
+
+  <!-- ============ RESUME ============ -->
+  <section class="band band--alt" id="resume">
+    <div class="wrap">
+      <header class="shead shead--tight reveal">
+        <p class="eyebrow">04 <span class="dot">·</span> Résumé</p>
         <h2 class="display">Experience</h2>
         <p class="lede">Presented on the page and available as a single-page PDF for casting offices.</p>
         <div class="shead__actions">
@@ -199,24 +271,26 @@
       <div class="resume reveal">
         <div class="resume__col">
           <h3>Stage</h3>
-          <ul class="await">
-            <li><span>Production, role and venue — awaiting confirmed credits</span></li>
+          <ul class="credits">
+            <li><strong>Tiny Tim</strong><span>The Christmas story play &mdash; full production, four weeks, three shows a week</span></li>
+            <li><strong>Ensemble</strong><span><em>The Nutcracker</em> &mdash; first appearance on stage</span></li>
           </ul>
         </div>
         <div class="resume__col">
           <h3>Screen &amp; Commercial</h3>
           <ul class="await">
-            <li><span>Awaiting confirmed credits</span></li>
+            <li><span>Self-taped commercial auditions are shown above. Booked screen credits: awaiting details.</span></li>
           </ul>
         </div>
         <div class="resume__col">
           <h3>Training</h3>
-          <ul class="await">
-            <li><span>Classes, coaches and workshops — awaiting details</span></li>
+          <ul class="credits">
+            <li><strong>Dance</strong><span>Competition dance, jazz and ballet &mdash; classes since age two</span></li>
+            <li><strong>Singing</strong><span>Classes since age two</span></li>
           </ul>
         </div>
       </div>
-      <p class="note">Credits are published only once confirmed, with venue or company named rather than school. Nothing here is estimated or inferred.</p>
+      <p class="note">Production years, venue names and any representative details are being confirmed before they are published. Credits are listed only once confirmed, with venue or company named rather than school.</p>
     </div>
   </section>
 
@@ -224,13 +298,13 @@
   <section class="band band--ink" id="skills">
     <div class="wrap">
       <header class="shead reveal">
-        <p class="eyebrow">04 <span class="dot">·</span> Special skills</p>
+        <p class="eyebrow">05 <span class="dot">·</span> Special skills</p>
         <h2 class="display">What she does</h2>
-        <p class="lede">Skills are listed only where they are genuinely held and honestly rated, with footage where it exists.</p>
+        <p class="lede">Skills are listed only where they are genuinely held, with footage where it exists.</p>
       </header>
       <div class="skills reveal">
-        <div class="skill"><h3>Singing</h3><p class="dim">On-stage evidence available. Range and rating awaiting confirmation.</p></div>
-        <div class="skill"><h3>Dance</h3><p class="dim">Choreographed stage work on record. Styles and rating awaiting confirmation.</p></div>
+        <div class="skill"><h3>Singing</h3><p class="dim">Classes since age two. Featured solo vocal on stage in the reel.</p></div>
+        <div class="skill"><h3>Dance</h3><p class="dim">Competition dance, jazz and ballet, since age two. Stage work throughout the reel.</p></div>
         <div class="skill"><h3>Accents &amp; dialects</h3><p class="dim">Awaiting list</p></div>
         <div class="skill"><h3>Movement</h3><p class="dim">Awaiting list</p></div>
         <div class="skill"><h3>Instruments</h3><p class="dim">Awaiting list</p></div>
@@ -241,13 +315,55 @@
 
   <!-- ============ ABOUT ============ -->
   <section class="band" id="about">
-    <div class="wrap wrap--narrow">
+    <div class="wrap">
       <header class="shead reveal">
-        <p class="eyebrow">05 <span class="dot">·</span> About</p>
-        <h2 class="display">In her own words</h2>
+        <p class="eyebrow">06 <span class="dot">·</span> About Wynter</p>
+        <h2 class="display">About Wynter</h2>
       </header>
-      <div class="await await--block reveal">
-        <p>An approved biography, written by her parent, will appear here.</p>
+
+      <div class="about reveal">
+        <div class="about__video">
+          <div class="frame frame--tight">
+            <video class="frame__video" controls playsinline preload="none"
+                   poster="assets/img/poster-about.jpg"
+                   aria-label="Wynter Pearce introduces herself to camera">
+              <source src="assets/video/about-video.mp4" type="video/mp4">
+            </video>
+          </div>
+          <p class="frame__caption">Introduction <span class="dot">·</span> 0:37</p>
+        </div>
+
+        <div class="about__copy">
+          <div class="facts facts--ink" role="list" aria-label="Wynter Pearce at a glance">
+            <div class="fact" role="listitem">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 20h16M5.5 20v-5.5h13V20M8 14.5v-3M12 14.5v-3M16 14.5v-3"/><path d="M12 8.6c.85-.6.85-1.6 0-2.2-.85.6-.85 1.6 0 2.2z"/></svg>
+              <span class="fact__v">9</span><span class="fact__k">Age</span>
+            </div>
+            <div class="fact" role="listitem">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="3.3"/><path d="M5.4 20c0-3.7 2.9-6.3 6.6-6.3s6.6 2.6 6.6 6.3"/></svg>
+              <span class="fact__v">Female</span><span class="fact__k">Gender</span>
+            </div>
+            <div class="fact" role="listitem">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.4"/><path d="M12 7.4V12l3.1 2"/></svg>
+              <span class="fact__v">7 years</span><span class="fact__k">Experience</span>
+            </div>
+            <div class="fact" role="listitem">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M12 21s6.4-6.2 6.4-11A6.4 6.4 0 1 0 5.6 10c0 4.8 6.4 11 6.4 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+              <span class="fact__v">Bass Lake, CA</span><span class="fact__k">Based in</span>
+            </div>
+          </div>
+
+          <p class="about__lede">Wynter Pearce first went on stage when she was two, in <em>The Nutcracker</em>. She fell in love with performing and has been taking dance and singing classes ever since.</p>
+          <p>She has done competition dance, jazz and ballet, and her first major role was Tiny Tim in the Christmas story play. It was a full production &mdash; four weeks long, three shows a week &mdash; and she had to show up every Friday, Saturday and Sunday for an entire month, which showed her ability to remember her lines and also to be consistent and on time.</p>
+        </div>
+      </div>
+
+      <div class="words reveal">
+        <h3 class="display">In her own words</h3>
+        <blockquote>
+          <p>I live in nature, a tiny town near Yosemite. I love nature, I love cats and dogs. I feed a crow who flies in my window and sits on my bed. I have a pet bird and a chameleon and I love be-dazzling.</p>
+          <p>My first play was when I was two and I was in the Nutcracker. There's a small theater near where I live called the Golden Chain. That's where I've been doing all my recent plays and I love going there after school.</p>
+        </blockquote>
       </div>
     </div>
   </section>
@@ -256,7 +372,7 @@
   <section class="band band--alt" id="contact">
     <div class="wrap wrap--narrow">
       <header class="shead reveal">
-        <p class="eyebrow">06 <span class="dot">·</span> Enquiries</p>
+        <p class="eyebrow">07 <span class="dot">·</span> Enquiries</p>
         <h2 class="display">Professional enquiries</h2>
         <p class="lede">All casting, representation and production enquiries are handled by Wynter's parent.</p>
       </header>
