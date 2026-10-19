@@ -186,17 +186,40 @@ ul{margin:0; padding:0; list-style:none}
 .note{color:var(--grey); font-size:.84rem; max-width:74ch; margin-top:clamp(20px,3vw,32px); line-height:1.65}
 .band [id]{scroll-margin-top:calc(var(--bar) + 24px)}
 
+/* ---------- on camera ---------- */
+.oncamera{display:grid; grid-template-columns:1fr minmax(210px,290px); gap:clamp(28px,5vw,70px); align-items:center}
+.oncamera__copy h2{font-size:clamp(2rem,4.6vw,3.4rem); line-height:1.05; margin-bottom:clamp(14px,2vw,20px)}
+.oncamera .lede{margin-bottom:22px; max-width:46ch}
+.oncamera__credit{font-family:var(--display); font-size:clamp(1.05rem,1.7vw,1.3rem); color:#fff}
+.oncamera__player{width:100%; justify-self:center}
+.oncamera__player .frame--tight{width:min(290px,80%)}
+
+/* ---------- casting profile ---------- */
+.castprofile{
+  border-top:1px solid var(--hair); border-bottom:1px solid var(--hair);
+  padding:clamp(18px,2.4vw,26px) 0; margin-bottom:clamp(26px,4vw,44px);
+}
+.castprofile__title{
+  font-family:var(--text); font-weight:500; font-size:.7rem; letter-spacing:.22em;
+  text-transform:uppercase; color:var(--grey); margin-bottom:12px;
+}
+.castprofile__list{display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin:0}
+.castprofile__list > div{padding:12px 18px 12px 0; border-right:1px solid var(--hair)}
+.castprofile__list > div:nth-child(4n){border-right:none}
+.castprofile dt{font-size:.58rem; letter-spacing:.18em; text-transform:uppercase; color:var(--grey); margin-bottom:5px}
+.castprofile dd{margin:0; font-size:.95rem; color:var(--ink); line-height:1.5}
+
 /* ---------- headshot lead ---------- */
 .hslead{
-  display:grid; grid-template-columns:minmax(200px,300px) 1fr;
-  gap:clamp(20px,3vw,44px); align-items:end; margin-bottom:clamp(26px,4vw,48px);
+  display:grid; grid-template-columns:minmax(190px,258px) 1fr;
+  gap:clamp(20px,3.4vw,52px); align-items:center; margin-bottom:clamp(26px,4vw,48px);
 }
 .hslead__shot{margin:0}
 .hslead__shot img{width:100%; height:auto; display:block; border-radius:3px}
 .hslead__shot figcaption{
   margin-top:10px; font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--grey);
 }
-.hslead__side p{color:var(--grey); max-width:54ch; font-size:.95rem}
+.hslead__side p{color:var(--grey); max-width:none; font-size:.97rem; line-height:1.72}
 .hslead__side p + p{margin-top:14px}
 
 /* ---------- headshots ---------- */
@@ -468,6 +491,11 @@ ul{margin:0; padding:0; list-style:none}
   .collage{grid-template-columns:repeat(2,1fr)}
   .hslead{grid-template-columns:1fr; gap:18px; align-items:start}
   .hslead__shot{max-width:320px}
+  .oncamera{grid-template-columns:1fr; gap:clamp(26px,6vw,40px)}
+  .oncamera__player{justify-self:start}
+  .castprofile__list{grid-template-columns:repeat(2,1fr)}
+  .castprofile__list > div{border-right:none; border-bottom:1px solid var(--hair); padding:12px 12px 12px 0}
+  .castprofile__list > div:nth-child(2n){padding-left:14px; border-left:1px solid var(--hair)}
   .contactcard{grid-template-columns:1fr; gap:18px}
   .expfoot{flex-direction:column; align-items:flex-start}
   .look figcaption,.look__slot span{font-size:.62rem; letter-spacing:.18em}
