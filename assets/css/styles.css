@@ -123,6 +123,10 @@ ul{margin:0; padding:0; list-style:none}
 .hero__logo{width:min(560px,100%); height:auto; margin:0 0 clamp(14px,2vw,22px); filter:brightness(1.04)}
 .hero__line{font-family:var(--display); font-size:clamp(1.15rem,2vw,1.5rem); color:#fff; margin-bottom:.5rem}
 .lede{color:rgba(250,248,245,.74); max-width:46ch; font-size:clamp(.96rem,1.15vw,1.05rem)}
+.hero__seeking{
+  margin-top:20px; font-size:.74rem; letter-spacing:.18em; text-transform:uppercase;
+  color:rgba(250,248,245,.6);
+}
 .hero__actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:clamp(22px,3vw,34px)}
 .btn{
   display:inline-flex; align-items:center; gap:10px; font-size:.79rem; letter-spacing:.14em;
