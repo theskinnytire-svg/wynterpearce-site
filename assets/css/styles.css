@@ -194,6 +194,27 @@ ul{margin:0; padding:0; list-style:none}
 .oncamera__player{width:100%; justify-self:center}
 .oncamera__player .frame--tight{width:min(290px,80%)}
 
+/* ---------- photography strip ---------- */
+.photostrip{
+  --stripgap:clamp(8px,1.2vw,16px);
+  position:relative; overflow:hidden; background:var(--ink);
+  padding:clamp(16px,2.2vw,26px) 0;
+}
+.photostrip__track{
+  display:flex; gap:var(--stripgap); width:max-content;
+  animation:stripScroll 110s linear infinite; will-change:transform;
+}
+.photostrip__group{display:flex; gap:var(--stripgap)}
+.photostrip__group img{
+  height:clamp(240px,30vw,440px); width:auto; display:block;
+  border-radius:3px; object-fit:cover;
+}
+@keyframes stripScroll{
+  from{transform:translate3d(0,0,0)}
+  to{transform:translate3d(-50%,0,0)}
+}
+.photostrip:hover .photostrip__track{animation-play-state:paused}
+
 /* ---------- casting profile ---------- */
 .castprofile{
   border-top:1px solid var(--hair); border-bottom:1px solid var(--hair);
@@ -204,9 +225,14 @@ ul{margin:0; padding:0; list-style:none}
   text-transform:uppercase; color:var(--grey); margin-bottom:12px;
 }
 .castprofile__list{display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin:0}
-.castprofile__list > div{padding:12px 18px 12px 0; border-right:1px solid var(--hair)}
-.castprofile__list > div:nth-child(4n){border-right:none}
-.castprofile dt{font-size:.58rem; letter-spacing:.18em; text-transform:uppercase; color:var(--grey); margin-bottom:5px}
+.castprofile__list > div{padding:14px 26px; border-right:1px solid var(--hair)}
+.castprofile__list > div:nth-child(4n+1){padding-left:0}
+.castprofile__list > div:nth-child(4n){padding-right:0; border-right:none}
+.castprofile dt{
+  display:inline-block; font-size:.56rem; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--grey); background:rgba(10,10,11,.06); border-radius:999px;
+  padding:5px 10px; line-height:1; margin-bottom:8px;
+}
 .castprofile dd{margin:0; font-size:.95rem; color:var(--ink); line-height:1.5}
 
 /* ---------- headshot lead ---------- */
@@ -494,8 +520,9 @@ ul{margin:0; padding:0; list-style:none}
   .oncamera{grid-template-columns:1fr; gap:clamp(26px,6vw,40px)}
   .oncamera__player{justify-self:start}
   .castprofile__list{grid-template-columns:repeat(2,1fr)}
-  .castprofile__list > div{border-right:none; border-bottom:1px solid var(--hair); padding:12px 12px 12px 0}
-  .castprofile__list > div:nth-child(2n){padding-left:14px; border-left:1px solid var(--hair)}
+  .castprofile__list > div{border-right:none; border-bottom:1px solid var(--hair); padding:14px 16px 14px 0}
+  .castprofile__list > div:nth-child(2n){padding-left:16px; padding-right:0; border-left:1px solid var(--hair)}
+  .castprofile__list > div:nth-child(4n+1){padding-left:0}
   .contactcard{grid-template-columns:1fr; gap:18px}
   .expfoot{flex-direction:column; align-items:flex-start}
   .look figcaption,.look__slot span{font-size:.62rem; letter-spacing:.18em}
@@ -525,6 +552,8 @@ ul{margin:0; padding:0; list-style:none}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .js .reveal{opacity:1; transform:none; transition:none}
+  .photostrip{overflow-x:auto; -webkit-overflow-scrolling:touch}
+  .photostrip__track{animation:none}
   .scrollcue span{animation:none}
   .strip figure:hover img{transform:none}
 }
