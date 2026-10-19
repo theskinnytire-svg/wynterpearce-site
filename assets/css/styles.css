@@ -197,23 +197,82 @@ ul{margin:0; padding:0; list-style:none}
 /* ---------- photography strip ---------- */
 .photostrip{
   --stripgap:clamp(8px,1.2vw,16px);
-  position:relative; overflow:hidden; background:var(--ink);
-  padding:clamp(16px,2.2vw,26px) 0;
+  position:relative; background:var(--ink);
+  padding:clamp(16px,2.2vw,26px) 0 clamp(10px,1.6vw,18px);
 }
-.photostrip__track{
-  display:flex; gap:var(--stripgap); width:max-content;
-  animation:stripScroll 110s linear infinite; will-change:transform;
+.photostrip__viewport{
+  overflow-x:auto; overflow-y:hidden; cursor:grab;
+  scrollbar-width:none; -ms-overflow-style:none;
 }
-.photostrip__group{display:flex; gap:var(--stripgap)}
-.photostrip__group img{
-  height:clamp(240px,30vw,440px); width:auto; display:block;
-  border-radius:3px; object-fit:cover;
+.photostrip__viewport::-webkit-scrollbar{display:none}
+.photostrip__viewport.is-dragging{cursor:grabbing}
+.photostrip__viewport:focus-visible{outline:1px solid var(--ice); outline-offset:-2px}
+.photostrip__track{display:flex; gap:var(--stripgap); width:max-content}
+.photostrip__item{
+  flex:0 0 auto; padding:0; border:0; background:none; cursor:zoom-in;
+  border-radius:3px; overflow:hidden; line-height:0; display:block;
+  transition:opacity .35s ease;
 }
-@keyframes stripScroll{
-  from{transform:translate3d(0,0,0)}
-  to{transform:translate3d(-50%,0,0)}
+.photostrip__item img{
+  height:clamp(240px,30vw,440px); width:auto; display:block; object-fit:cover;
+  transition:transform .7s cubic-bezier(.2,.7,.2,1), filter .5s ease;
 }
-.photostrip:hover .photostrip__track{animation-play-state:paused}
+.photostrip__item:hover img{transform:scale(1.035); filter:brightness(1.06)}
+.photostrip__item:focus-visible{outline:1px solid var(--ice); outline-offset:3px}
+.photostrip__nav{
+  position:absolute; top:50%; margin-top:clamp(-30px,-2.4vw,-14px); z-index:3;
+  width:46px; height:46px; border-radius:50%; display:none; place-items:center;
+  border:1px solid rgba(250,248,245,.34); background:rgba(10,10,11,.62);
+  backdrop-filter:blur(8px); color:#fff; cursor:pointer;
+  opacity:0; transition:opacity .3s ease, background .3s ease, transform .3s ease;
+}
+.js .photostrip__nav{display:grid}
+.photostrip__nav svg{width:22px; height:22px}
+.photostrip__nav--prev{left:clamp(10px,2vw,26px)}
+.photostrip__nav--next{right:clamp(10px,2vw,26px)}
+.photostrip:hover .photostrip__nav,
+.photostrip__nav:focus-visible,
+.photostrip__viewport:focus-visible ~ .photostrip__nav{opacity:1}
+.photostrip__nav:hover{background:rgba(10,10,11,.85); transform:scale(1.06)}
+.photostrip__hint{
+  display:none; margin:0; padding:12px var(--gut) 0; text-align:center;
+  font-size:.7rem; letter-spacing:.14em; text-transform:uppercase;
+  color:rgba(250,248,245,.4);
+}
+.js .photostrip__hint{display:block}
+@media (hover:none){
+  .photostrip__nav{opacity:1}
+  .photostrip__item{cursor:pointer}
+}
+
+/* ---------- lightbox ---------- */
+.lightbox{
+  position:fixed; inset:0; z-index:120; background:rgba(8,8,9,.95);
+  display:grid; place-items:center; padding:clamp(56px,7vw,88px) clamp(16px,6vw,88px);
+}
+.lightbox[hidden]{display:none}
+.lightbox__figure{margin:0; display:grid; gap:16px; justify-items:center; max-width:100%; max-height:100%}
+.lightbox__img{
+  max-width:100%; max-height:calc(100vh - 200px); width:auto; height:auto;
+  border-radius:3px; box-shadow:0 40px 90px -30px rgba(0,0,0,.9);
+  background:rgba(250,248,245,.04);
+}
+.lightbox__cap{
+  color:rgba(250,248,245,.72); font-size:.78rem; letter-spacing:.14em; text-transform:uppercase;
+}
+.lightbox__btn{
+  position:absolute; width:46px; height:46px; border-radius:50%; display:grid; place-items:center;
+  border:1px solid rgba(250,248,245,.32); background:rgba(250,248,245,.07); color:#fff; cursor:pointer;
+  transition:background .25s ease, transform .25s ease;
+}
+.lightbox__btn svg{width:22px; height:22px}
+.lightbox__btn:hover{background:rgba(250,248,245,.18)}
+.lightbox__close{top:clamp(14px,3vw,28px); right:clamp(14px,3vw,28px)}
+.lightbox__prev{left:clamp(10px,2.5vw,34px); top:50%; transform:translateY(-50%)}
+.lightbox__prev:hover{transform:translateY(-50%) scale(1.06)}
+.lightbox__next{right:clamp(10px,2.5vw,34px); top:50%; transform:translateY(-50%)}
+.lightbox__next:hover{transform:translateY(-50%) scale(1.06)}
+body.lb-open{overflow:hidden}
 
 /* ---------- casting profile ---------- */
 .castprofile{
@@ -552,8 +611,8 @@ ul{margin:0; padding:0; list-style:none}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .js .reveal{opacity:1; transform:none; transition:none}
-  .photostrip{overflow-x:auto; -webkit-overflow-scrolling:touch}
-  .photostrip__track{animation:none}
+  .photostrip__item img{transition:none}
+  .photostrip__item:hover img{transform:none}
   .scrollcue span{animation:none}
   .strip figure:hover img{transform:none}
 }

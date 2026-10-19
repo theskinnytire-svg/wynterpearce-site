@@ -118,32 +118,49 @@
 
   <!-- ============ PHOTOGRAPHY STRIP ============ -->
   <section class="photostrip" aria-label="Photographs of Wynter Pearce">
-    <div class="photostrip__track">
-      <div class="photostrip__group">
-        <img src="assets/img/strip-01.jpg" alt="Wynter Pearce on stage in a theatrical production" loading="lazy">
-        <img src="assets/img/strip-02.jpg" alt="Wynter Pearce riding a horse" loading="lazy">
-        <img src="assets/img/strip-03.jpg" alt="Wynter Pearce, portrait" loading="lazy">
-        <img src="assets/img/strip-04.jpg" alt="Wynter Pearce riding her bicycle" loading="lazy">
-        <img src="assets/img/strip-05.jpg" alt="Wynter Pearce, portrait" loading="lazy">
-        <img src="assets/img/strip-06.jpg" alt="Wynter Pearce beside a lake" loading="lazy">
-        <img src="assets/img/strip-07.jpg" alt="Wynter Pearce at a festive event" loading="lazy">
-        <img src="assets/img/strip-08.jpg" alt="Wynter Pearce in costume with a parasol" loading="lazy">
-        <img src="assets/img/strip-09.jpg" alt="Wynter Pearce holding flowers" loading="lazy">
-        <img src="assets/img/strip-10.jpg" alt="Wynter Pearce in a group stage number" loading="lazy">
-      </div>
-      <div class="photostrip__group" aria-hidden="true">
-        <img src="assets/img/strip-01.jpg" alt="" loading="lazy">
-        <img src="assets/img/strip-02.jpg" alt="" loading="lazy">
-        <img src="assets/img/strip-03.jpg" alt="" loading="lazy">
-        <img src="assets/img/strip-04.jpg" alt="" loading="lazy">
-        <img src="assets/img/strip-05.jpg" alt="" loading="lazy">
-        <img src="assets/img/strip-06.jpg" alt="" loading="lazy">
-        <img src="assets/img/strip-07.jpg" alt="" loading="lazy">
-        <img src="assets/img/strip-08.jpg" alt="" loading="lazy">
-        <img src="assets/img/strip-09.jpg" alt="" loading="lazy">
-        <img src="assets/img/strip-10.jpg" alt="" loading="lazy">
+    <div class="photostrip__viewport" id="photoStrip" data-strip tabindex="0" role="region"
+         aria-label="Photograph strip. Drag to browse, use the arrow buttons, or press the left and right arrow keys.">
+      <div class="photostrip__track">
+        <button class="photostrip__item" type="button" data-full="assets/img/full-01.jpg" data-caption="On stage in a theatrical production">
+          <img src="assets/img/strip-01.jpg" alt="Wynter Pearce on stage in a theatrical production" loading="lazy">
+        </button>
+        <button class="photostrip__item" type="button" data-full="assets/img/full-02.jpg" data-caption="Riding a horse">
+          <img src="assets/img/strip-02.jpg" alt="Wynter Pearce riding a horse" loading="lazy">
+        </button>
+        <button class="photostrip__item" type="button" data-full="assets/img/full-03.jpg" data-caption="Portrait">
+          <img src="assets/img/strip-03.jpg" alt="Wynter Pearce, portrait" loading="lazy">
+        </button>
+        <button class="photostrip__item" type="button" data-full="assets/img/full-04.jpg" data-caption="Riding her bicycle">
+          <img src="assets/img/strip-04.jpg" alt="Wynter Pearce riding her bicycle" loading="lazy">
+        </button>
+        <button class="photostrip__item" type="button" data-full="assets/img/full-05.jpg" data-caption="Portrait">
+          <img src="assets/img/strip-05.jpg" alt="Wynter Pearce, portrait" loading="lazy">
+        </button>
+        <button class="photostrip__item" type="button" data-full="assets/img/full-06.jpg" data-caption="Beside a lake">
+          <img src="assets/img/strip-06.jpg" alt="Wynter Pearce beside a lake" loading="lazy">
+        </button>
+        <button class="photostrip__item" type="button" data-full="assets/img/full-07.jpg" data-caption="At a festive event">
+          <img src="assets/img/strip-07.jpg" alt="Wynter Pearce at a festive event" loading="lazy">
+        </button>
+        <button class="photostrip__item" type="button" data-full="assets/img/full-08.jpg" data-caption="In costume with a parasol">
+          <img src="assets/img/strip-08.jpg" alt="Wynter Pearce in costume with a parasol" loading="lazy">
+        </button>
+        <button class="photostrip__item" type="button" data-full="assets/img/full-09.jpg" data-caption="Holding flowers">
+          <img src="assets/img/strip-09.jpg" alt="Wynter Pearce holding flowers" loading="lazy">
+        </button>
+        <button class="photostrip__item" type="button" data-full="assets/img/full-10.jpg" data-caption="In a group stage number">
+          <img src="assets/img/strip-10.jpg" alt="Wynter Pearce in a group stage number" loading="lazy">
+        </button>
       </div>
     </div>
+
+    <button class="photostrip__nav photostrip__nav--prev" type="button" data-strip-prev aria-label="Browse back through the photographs">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 5.5L8 12l6.5 6.5"/></svg>
+    </button>
+    <button class="photostrip__nav photostrip__nav--next" type="button" data-strip-next aria-label="Browse forward through the photographs">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 5.5L16 12l-6.5 6.5"/></svg>
+    </button>
+    <p class="photostrip__hint">Drag, or use the arrows, to browse &mdash; click a photograph to view it full size</p>
   </section>
 
   <!-- ============ ABOUT ============ -->
@@ -502,6 +519,22 @@
     <p class="dim">All enquiries handled by Wynter's parent. <a href="#contact">Enquiries</a></p>
   </div>
 </footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photograph viewer" hidden>
+  <button class="lightbox__btn lightbox__close" type="button" data-lb-close aria-label="Close the photograph viewer">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <button class="lightbox__btn lightbox__prev" type="button" data-lb-prev aria-label="Previous photograph">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 5.5L8 12l6.5 6.5"/></svg>
+  </button>
+  <button class="lightbox__btn lightbox__next" type="button" data-lb-next aria-label="Next photograph">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 5.5L16 12l-6.5 6.5"/></svg>
+  </button>
+  <figure class="lightbox__figure">
+    <img class="lightbox__img" alt="">
+    <figcaption class="lightbox__cap"></figcaption>
+  </figure>
+</div>
 
 <script type="application/ld+json">
 {
