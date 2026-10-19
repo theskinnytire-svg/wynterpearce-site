@@ -186,6 +186,19 @@ ul{margin:0; padding:0; list-style:none}
 .note{color:var(--grey); font-size:.84rem; max-width:74ch; margin-top:clamp(20px,3vw,32px); line-height:1.65}
 .band [id]{scroll-margin-top:calc(var(--bar) + 24px)}
 
+/* ---------- headshot lead ---------- */
+.hslead{
+  display:grid; grid-template-columns:minmax(200px,300px) 1fr;
+  gap:clamp(20px,3vw,44px); align-items:end; margin-bottom:clamp(26px,4vw,48px);
+}
+.hslead__shot{margin:0}
+.hslead__shot img{width:100%; height:auto; display:block; border-radius:3px}
+.hslead__shot figcaption{
+  margin-top:10px; font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--grey);
+}
+.hslead__side p{color:var(--grey); max-width:54ch; font-size:.95rem}
+.hslead__side p + p{margin-top:14px}
+
 /* ---------- headshots ---------- */
 .looks{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(12px,2vw,22px); margin-bottom:clamp(32px,5vw,60px)}
 .look{margin:0}
@@ -453,6 +466,8 @@ ul{margin:0; padding:0; list-style:none}
   }
   .circles img{scroll-snap-align:start}
   .collage{grid-template-columns:repeat(2,1fr)}
+  .hslead{grid-template-columns:1fr; gap:18px; align-items:start}
+  .hslead__shot{max-width:320px}
   .contactcard{grid-template-columns:1fr; gap:18px}
   .expfoot{flex-direction:column; align-items:flex-start}
   .look figcaption,.look__slot span{font-size:.62rem; letter-spacing:.18em}
